@@ -1,0 +1,129 @@
+[
+    {
+        "id": "cb6252a29d5ee072",
+        "type": "tab",
+        "label": "フロー 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3b884814.bb9968",
+        "type": "Webhook",
+        "z": "cb6252a29d5ee072",
+        "name": "",
+        "url": "/webhook",
+        "x": 320,
+        "y": 320,
+        "wires": [
+            [
+                "df150e9d.8406a"
+            ]
+        ]
+    },
+    {
+        "id": "9d6bca3a.db9428",
+        "type": "ReplyMessage",
+        "z": "cb6252a29d5ee072",
+        "name": "",
+        "replyMessage": "",
+        "x": 740,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "df150e9d.8406a",
+        "type": "change",
+        "z": "cb6252a29d5ee072",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.type",
+                "pt": "msg",
+                "to": "template",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.altText",
+                "pt": "msg",
+                "to": "確認テンプレートです",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.template.type",
+                "pt": "msg",
+                "to": "confirm",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.template.text",
+                "pt": "msg",
+                "to": "バナナは？",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.template.actions[0].type",
+                "pt": "msg",
+                "to": "message",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.template.actions[0].label",
+                "pt": "msg",
+                "to": "おやつ",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.template.actions[0].text",
+                "pt": "msg",
+                "to": "snack",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.template.actions[1].type",
+                "pt": "msg",
+                "to": "message",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.template.actions[1].label",
+                "pt": "msg",
+                "to": "果物",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.template.actions[1].text",
+                "pt": "msg",
+                "to": "fruit",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 320,
+        "wires": [
+            [
+                "9d6bca3a.db9428"
+            ]
+        ]
+    }
+]
